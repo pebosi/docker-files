@@ -13,7 +13,12 @@ ENV PHPIZE_DEPS \
     make \
     git \
     pkgconf \
-    re2c
+    re2c \
+    curl-dev \
+    libpng-dev \
+    libwebp-dev \
+    libjpeg-turbo-dev \
+    freetype-dev
 
 RUN apk add --no-cache --virtual .persistent-deps \
     # for intl extension
@@ -27,12 +32,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
     # for soap
     libxml2-dev \
     libcurl \
-    curl \
-    curl-dev \
-    libpng-dev \
-    libwebp-dev \
-    libjpeg-turbo-dev \
-    freetype-dev
+    curl
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
@@ -71,10 +71,6 @@ RUN set -xe \
 # Copy configuration
 COPY config/php.ini /usr/local/etc/php/
 COPY config/php7.ini /usr/local/etc/php/conf.d/
-COPY config/amqp.ini /usr/local/etc/php/conf.d/
-COPY config/zmq.ini /usr/local/etc/php/conf.d/
-COPY config/redis.ini /usr/local/etc/php/conf.d/
-COPY config/mongodb.ini /usr/local/etc/php/conf.d/
 COPY config/fpm/php-fpm.conf /usr/local/etc/
 COPY config/fpm/pool.d /usr/local/etc/pool.d
 
