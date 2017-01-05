@@ -28,7 +28,10 @@ RUN apk add --no-cache --virtual .persistent-deps \
     libxml2-dev \
     libcurl \
     curl \
-    curl-dev
+    curl-dev \
+    libpng-dev \
+    libwebp-dev \
+    libjpeg-turbo-dev
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
