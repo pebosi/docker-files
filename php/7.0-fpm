@@ -26,6 +26,7 @@ RUN apk add --no-cache --virtual .persistent-deps \
     postgresql-dev \
     # for soap
     libxml2-dev \
+    libcurl \
     curl
 
 RUN set -xe \
