@@ -15,9 +15,6 @@ ENV PHPIZE_DEPS \
     pkgconf \
     re2c
 
-RUN apk add php7-gd \
-    php7-curl
-
 RUN apk add --no-cache --virtual .persistent-deps \
     # for intl extension
     icu-dev \
