@@ -27,7 +27,8 @@ RUN apk add --no-cache --virtual .persistent-deps \
     # for soap
     libxml2-dev \
     libcurl \
-    curl
+    curl \
+    curl-dev
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
