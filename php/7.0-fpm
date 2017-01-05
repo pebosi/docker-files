@@ -35,7 +35,9 @@ RUN apk add --no-cache --virtual .persistent-deps \
     postgresql-dev \
     # for soap
     libxml2-dev \
-    zeromq
+    zeromq \
+    php7-gd \
+    php7-curl
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
